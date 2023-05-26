@@ -101,9 +101,9 @@
 
                     <Label HorizontalTextAlignment="Center" FontSize="Subtitle" FontAttributes="Bold">Печать</Label>
 
-                    <Frame.GestureRecognizers>
+                    <!--<Frame.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding PechatCommand}"></TapGestureRecognizer>
-                    </Frame.GestureRecognizers>
+                    </Frame.GestureRecognizers>-->
                 </Frame>
              
 
