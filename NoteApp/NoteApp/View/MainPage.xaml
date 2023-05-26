@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NoteApp.MainPage">
+
+    <Grid  RowDefinitions="50,*"  BackgroundColor="Black">
+
+
+        <ScrollView Grid.RowSpan="2">
+
+            <StackLayout Spacing="2" Padding="0" >
+
+
+                <Frame Padding="10" Margin="5,10,0,0" CornerRadius="22"  IsVisible="True">
+
+                    <Grid RowDefinitions="auto, *" ColumnDefinitions="*,65">
+                        <Label HorizontalTextAlignment="Center" Text="наименование" FontAttributes="Bold" FontSize="Subtitle" Margin="10,0"/>
+
+
+                        <Entry Margin="20" Text="Binding Name}">
+
+                        </Entry>
+                    </Grid>
+                   
+                </Frame>
+                <Frame Padding="10" Margin="5,0,0,0" CornerRadius="22"  IsVisible="True">
+
+                    <Grid RowDefinitions="auto, *" ColumnDefinitions="*,65">
+                        <Label HorizontalTextAlignment="Center" Text="Описание" FontAttributes="Bold" FontSize="Subtitle" Margin="10,0"/>
+
+
+                        <Entry Margin="20" Text="{Binding Name}">
+
+                        </Entry>
+                    </Grid>
+
+                </Frame>
+                <Frame Padding="10" Margin="5,0,0,0" CornerRadius="22"  IsVisible="True">
+
+                    <Grid RowDefinitions="auto, *" ColumnDefinitions="*,65">
+                        <Label HorizontalTextAlignment="Center" Text="Категория" FontAttributes="Bold" FontSize="Subtitle" Margin="10,0"/>
+
+
+                        <Entry Margin="20" Text="{Binding Description}">
+
+                        </Entry>
+                    </Grid>
+
+                </Frame>
+                <Frame Padding="10" Margin="5,0,0,0" CornerRadius="22"  IsVisible="True">
+
+                    <Grid RowDefinitions="auto, *" ColumnDefinitions="*,65">
+                        <Label HorizontalTextAlignment="Center" Text="Цена" FontAttributes="Bold" FontSize="Subtitle" Margin="10,0"/>
+
+
+                        <Entry Margin="20" Text="{Binding Price}">
+
+                        </Entry>
+                    </Grid>
+
+                </Frame>
+                <Frame Padding="10" Margin="5,0,0,0" CornerRadius="22"  IsVisible="True">
+
+                    <Grid RowDefinitions="auto, *" ColumnDefinitions="*,65">
+                        <Label HorizontalTextAlignment="Center" Text="Количество" FontAttributes="Bold" FontSize="Subtitle" Margin="10,0"/>
+
+
+                        <Entry Margin="20" Text="{Binding Count}">
+
+                        </Entry>
+                    </Grid>
+
+                </Frame>
+                <Frame Padding="10" Margin="5,0,0,0" CornerRadius="22"  IsVisible="True">
+
+                    <Grid RowDefinitions="auto, *" ColumnDefinitions="*,65">
+                        <Label HorizontalTextAlignment="Center" Text="Дата" FontAttributes="Bold" FontSize="Subtitle" Margin="10,0"/>
+
+
+                        <Entry Margin="20" Text="{Binding Date}">
+
+                        </Entry>
+                    </Grid>
+
+                </Frame>
+
+
+                <Frame Padding="20" Margin="5,10,5,5" CornerRadius="22"  IsVisible="True">
+
+
+                    <Label HorizontalTextAlignment="Center" FontSize="Subtitle" FontAttributes="Bold">Сохранить</Label>
+
+
+                </Frame>
+                
+                <Frame Padding="20" Margin="5,10,5,5" CornerRadius="22"  IsVisible="True">
+
+
+                    <Label HorizontalTextAlignment="Center" FontSize="Subtitle" FontAttributes="Bold">Печать</Label>
+                   
+
+                </Frame>
+             
+
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+
+</ContentPage>
