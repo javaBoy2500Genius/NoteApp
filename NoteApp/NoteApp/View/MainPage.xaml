@@ -1,7 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="NoteApp.MainPage">
+             x:Class="NoteApp.MainPage"
+            xmlns:vm="clr-namespace:NoteApp.ViewModel"
+                Shell.NavBarIsVisible="False"
+                x:DataType="vm:MainPageViewModel">
 
     <Grid  RowDefinitions="50,*"  BackgroundColor="Black">
 
@@ -29,7 +32,7 @@
                         <Label HorizontalTextAlignment="Center" Text="Описание" FontAttributes="Bold" FontSize="Subtitle" Margin="10,0"/>
 
 
-                        <Entry Margin="20" Text="{Binding Name}">
+                        <Entry Margin="20"  Text="{Binding Name}">
 
                         </Entry>
                     </Grid>
@@ -77,7 +80,7 @@
                         <Label HorizontalTextAlignment="Center" Text="Дата" FontAttributes="Bold" FontSize="Subtitle" Margin="10,0"/>
 
 
-                        <Entry Margin="20" Text="{Binding Date}">
+                        <Entry Margin="20" Text="{Binding CreateDate}">
 
                         </Entry>
                     </Grid>
@@ -97,8 +100,10 @@
 
 
                     <Label HorizontalTextAlignment="Center" FontSize="Subtitle" FontAttributes="Bold">Печать</Label>
-                   
 
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding PechatCommand}"></TapGestureRecognizer>
+                    </Frame.GestureRecognizers>
                 </Frame>
              
 
