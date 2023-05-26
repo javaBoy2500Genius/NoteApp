@@ -5,7 +5,9 @@
             xmlns:vm="clr-namespace:NoteApp.ViewModel"
                 Shell.NavBarIsVisible="False"
                 x:DataType="vm:MainPageViewModel">
-
+    <ContentPage.BindingContext>
+        <vm:MainPageViewModel/>
+    </ContentPage.BindingContext>
     <Grid  RowDefinitions="50,*"  BackgroundColor="Black">
 
 
@@ -20,7 +22,7 @@
                         <Label HorizontalTextAlignment="Center" Text="наименование" FontAttributes="Bold" FontSize="Subtitle" Margin="10,0"/>
 
 
-                        <Entry Margin="20" Text="Binding Name}">
+                        <Entry Margin="20" Text="{Binding Name}"  TextChanged="Entry_TextChanged">
 
                         </Entry>
                     </Grid>
@@ -32,7 +34,7 @@
                         <Label HorizontalTextAlignment="Center" Text="Описание" FontAttributes="Bold" FontSize="Subtitle" Margin="10,0"/>
 
 
-                        <Entry Margin="20"  Text="{Binding Name}">
+                        <Entry Margin="20" TextChanged="Entry_TextChanged1"  Text="{Binding Description}">
 
                         </Entry>
                     </Grid>
@@ -44,7 +46,7 @@
                         <Label HorizontalTextAlignment="Center" Text="Категория" FontAttributes="Bold" FontSize="Subtitle" Margin="10,0"/>
 
 
-                        <Entry Margin="20" Text="{Binding Description}">
+                        <Entry Margin="20" TextChanged="Entry_TextChanged2" Text="{Binding Category}">
 
                         </Entry>
                     </Grid>
@@ -56,7 +58,7 @@
                         <Label HorizontalTextAlignment="Center" Text="Цена" FontAttributes="Bold" FontSize="Subtitle" Margin="10,0"/>
 
 
-                        <Entry Margin="20" Text="{Binding Price}">
+                        <Entry  Keyboard="Numeric"  Margin="20" TextChanged="Entry_TextChanged3" Text="{Binding Price}">
 
                         </Entry>
                     </Grid>
@@ -68,24 +70,13 @@
                         <Label HorizontalTextAlignment="Center" Text="Количество" FontAttributes="Bold" FontSize="Subtitle" Margin="10,0"/>
 
 
-                        <Entry Margin="20" Text="{Binding Count}">
+                        <Entry Keyboard="Numeric" Margin="20" TextChanged="Entry_TextChanged4" Text="{Binding Count}">
 
                         </Entry>
                     </Grid>
 
                 </Frame>
-                <Frame Padding="10" Margin="5,0,0,0" CornerRadius="22"  IsVisible="True">
-
-                    <Grid RowDefinitions="auto, *" ColumnDefinitions="*,65">
-                        <Label HorizontalTextAlignment="Center" Text="Дата" FontAttributes="Bold" FontSize="Subtitle" Margin="10,0"/>
-
-
-                        <Entry Margin="20" Text="{Binding CreateDate}">
-
-                        </Entry>
-                    </Grid>
-
-                </Frame>
+                
 
 
                 <Frame Padding="20" Margin="5,10,5,5" CornerRadius="22"  IsVisible="True">
@@ -101,9 +92,9 @@
 
                     <Label HorizontalTextAlignment="Center" FontSize="Subtitle" FontAttributes="Bold">Печать</Label>
 
-                    <!--<Frame.GestureRecognizers>
+                    <Frame.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding PechatCommand}"></TapGestureRecognizer>
-                    </Frame.GestureRecognizers>-->
+                    </Frame.GestureRecognizers>
                 </Frame>
              
 
